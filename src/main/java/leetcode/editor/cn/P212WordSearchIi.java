@@ -42,6 +42,7 @@ package leetcode.editor.cn;
 
 //date: 2021-03-23 00:48:13
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class P212WordSearchIi{
@@ -56,28 +57,49 @@ public class P212WordSearchIi{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
 
-        boolean containWords=false;
+
 
         public List<String> findWords(char[][] board, String[] words) {
 
             int totalY=board.length;
             if (totalY<=0) return null;
             int totalX=board[0].length;
-
-
-            return null;
+            List<String> res=new ArrayList<>();
+            for (int i=0;i<totalY;i++){
+                for (int j=0;j<totalX;j++){
+                    char ch=board[i][j];
+                    for (String word:words){
+                        backTrace(board,i,j,word,0,res);
+                    }
+                }
+            }
+            return res;
         }
 
     //回溯法
-        public boolean backTrace(char[][] board,String word,int travelPos){
+        public void  backTrace(char[][] board,int x,int y,
+                               String word,int travelPos,
+                               List<String> res
+        ){
+            if (travelPos>=word.length()) return;
 
-        if (travelPos < word.length()) {
+            if (board[x][y]==word.charAt(travelPos)  && travelPos==word.length()-1){
+               if (!res.contains(word))
+                res.add(word);
+                return;
+            }
+            if (board[x][y]!=word.charAt(travelPos)) return;
 
-
-            //上下左右，判断
-
-        }
-        return true;
+            if (board[x][y]==word.charAt(travelPos)){
+                char ch=board[x][y];
+                board[x][y]='#';
+                //遍历上下左右
+                if (x>0) backTrace(board,x-1,y,word,travelPos+1,res);
+                if (y>0) backTrace(board,x,y-1,word,travelPos+1,res);
+                if (x<(board.length-1) ) backTrace(board,x+1,y,word,travelPos+1,res);
+                if (y<(board[0].length-1)) backTrace(board,x,y+1,word,travelPos+1,res);
+                board[x][y]=ch;
+            }
         }
 
 }

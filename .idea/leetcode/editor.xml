@@ -35,6 +35,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P138CopyListWithRandomPointer.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P138CopyListWithRandomPointer.java" />
+              <option name="questionId" value="138" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P139WordBreak.java">
           <value>
             <LeetcodeEditor>
@@ -56,6 +64,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P1603DesignParkingSystem .java" />
               <option name="questionId" value="1708" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P198HouseRobber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P198HouseRobber.java" />
+              <option name="questionId" value="198" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -168,6 +184,22 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P3LongestSubstringWithoutRepeatingCharacters.java" />
               <option name="questionId" value="3" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P448FindAllNumbersDisappearedInAnArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P448FindAllNumbersDisappearedInAnArray.java" />
+              <option name="questionId" value="448" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P543DiameterOfBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/P543DiameterOfBinaryTree.java" />
+              <option name="questionId" value="543" />
             </LeetcodeEditor>
           </value>
         </entry>

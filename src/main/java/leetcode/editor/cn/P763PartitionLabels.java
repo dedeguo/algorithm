@@ -29,6 +29,7 @@ package leetcode.editor.cn;
 
 //date: 2021-04-11 23:18:01
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class P763PartitionLabels{
@@ -38,9 +39,25 @@ public class P763PartitionLabels{
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public List<Integer> partitionLabels(String S) {
 
-        return null;
+        //todo
+    public List<Integer> partitionLabels(String S) {
+        List<Integer> res=new ArrayList<>();
+        int[] next=new int[26];
+        for (int i=0;i<S.length();i++){
+            char ch=S.charAt(i);
+            next[ch-'a']=i;
+        }
+        int start=0;
+        int end=next[S.charAt(0)-'a'];
+        for (int  i=start;i<S.length();i++){
+            end=Math.max(end,next[S.charAt(i)-'a']);
+            if (i==end){
+                res.add(end-start+1);
+                start=end+1;
+            }
+        }
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

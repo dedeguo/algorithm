@@ -31,8 +31,7 @@ package leetcode.editor.cn;
 
 //date: 2021-04-13 07:21:53
 
-import java.util.Comparator;
-import java.util.TreeMap;
+import java.util.*;
 
 public class P347TopKFrequentElements{
     public static void main(String[] args) {
@@ -44,9 +43,25 @@ class Solution {
 
         //先统计频率在排序
     public int[] topKFrequent(int[] nums, int k) {
-
-
-
+        Map<Integer,Integer> freqMap=new HashMap<>();
+        for (int num:nums){
+            freqMap.put(num,freqMap.getOrDefault(num,0)+1);
+        }
+        Set<Map.Entry<Integer,Integer>> data= freqMap.entrySet();
+        List<Map.Entry<Integer,Integer>> list=new ArrayList();
+        list.addAll(data);
+        Collections.sort(list,
+                new Comparator<Map.Entry<Integer, Integer>>() {
+                    @Override
+                    public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                        return o1.getValue()- o2.getValue();
+                    }
+                });
+        int[] res=new int[k];
+        for (int i=0;i<k;i++){
+            res[i]=list.get(i).getKey();
+        }
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

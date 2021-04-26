@@ -25,3 +25,6 @@
 
 
 ### 238 Product of Array Except Self
+
+### 287 287. Find the Duplicate Number
+快慢指针

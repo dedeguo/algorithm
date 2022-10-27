@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Demo1 {
     public static void main(String[] args) {
+        List list;
         Scanner in =new Scanner(System.in);
         int m=in.nextInt();
         List<Integer> nums=new ArrayList<>();

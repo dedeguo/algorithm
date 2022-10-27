@@ -37,13 +37,44 @@ public class P5LongestPalindromicSubstring{
     public static void main(String[] args) {
         Solution solution = new P5LongestPalindromicSubstring().new Solution();
         // TO TEST
+        String s="cbbd";
+        String res=solution.longestPalindrome(s);
+        System.out.println(res);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-        //todo
-    public String longestPalindrome(String s) {
 
-        return "0";
+        //中心扩展法
+    public String longestPalindrome(String s) {
+        if(s==null || s.length()==0) return "";
+        int start = 0, end = 0;
+        for (int i=0;i<s.length();i++){
+            int len1=expandFromCenter(i,i,s);
+            int len2=expandFromCenter(i,i+1,s);
+            int temStart, temEnd;
+            if (len1>len2){
+               temStart=i-(len1-1)/2;
+               temEnd = i+(len1-1)/2;
+            }else {
+                temStart=i-(len2-2)/2;
+                temEnd=i+len2/2;
+            }
+            if (temEnd-temStart > end-start){
+                start=temStart;
+                end=temEnd;
+            }
+        }
+        return s.substring(start,end+1);
+    }
+
+    int expandFromCenter(int left, int right, String s){
+        while (left>=0 && right<s.length()
+                && s.charAt(left)==s.charAt(right) ){
+            left--;
+            right++;
+        }
+        //边界情况
+        return right-left-1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

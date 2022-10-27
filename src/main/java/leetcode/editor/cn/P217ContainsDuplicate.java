@@ -32,25 +32,37 @@ package leetcode.editor.cn;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class P217ContainsDuplicate{
+public class P217ContainsDuplicate {
     public static void main(String[] args) {
         Solution solution = new P217ContainsDuplicate().new Solution();
         // TO TEST
+        int[] nums={1,1,1,3,3,4,3,2,4,2};
+        System.out.println(solution.containsDuplicate(nums));
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> data=new HashSet<>();
-        for (int num:nums){
-            if (!data.contains(num))
-                data.add(num);
-            else {
-                return false;
+    class Solution {
+        //排序
+        public boolean containsDuplicate(int[] nums) {
+            Arrays.sort(nums);
+            if (nums.length==1) return false;
+            for (int i=1;i<nums.length;i++){
+                if (nums[i-1]==nums[i]) return true;
             }
+            return false;
         }
-        return true;
+        public boolean containsDuplicateHash(int[] nums) {
+            HashSet<Integer> data = new HashSet<>();
+            for (int num : nums) {
+                if (!data.contains(num))
+                    data.add(num);
+                else {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
